@@ -1,0 +1,25 @@
+﻿@model List<MvcMusicStore.Models.Album>
+@{
+    ViewBag.Title = "Nurhak's Music Store";
+}
+<div>
+    <div style="float: left; width: 70%">
+        <div id="promotion"></div>
+
+        <h3><em>Top 5</em> Selling Albums</h3>
+        <ul id="album-list">
+            @foreach (var album in Model)
+            {
+                <li><a href="@Url.Action("Details", "Store", new { id = album.AlbumId })">
+                    <img alt="@album.Title" src="@album.AlbumArtUrl"/>
+                    <span>@album.Title</span>
+                </a>
+                </li>
+            }
+        </ul>
+    </div>
+    <div id="divTwitter" style="float: left; width: 30%">
+        <a class="twitter-timeline" width="300" height="475" href="https://twitter.com/_PrincessYachts" data-widget-id="524932706967097344">Tweets by PrincessYachts</a>
+        <script>!function (d, s, id) { var js, fjs = d.getElementsByTagName(s)[0], p = /^http:/.test(d.location) ? 'http' : 'https'; if (!d.getElementById(id)) { js = d.createElement(s); js.id = id; js.src = p + "://platform.twitter.com/widgets.js"; fjs.parentNode.insertBefore(js, fjs); } }(document, "script", "twitter-wjs");</script>
+    </div>
+</div>
